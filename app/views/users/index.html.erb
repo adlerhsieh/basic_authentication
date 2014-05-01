@@ -1,0 +1,9 @@
+<h1>Index Page</h1>
+<%= link_to "Sign up", sign_up_path %>
+
+<p>============================</p>
+<% @users.each do |user| %>
+	<p>Name: <%= user.name %></p>
+	<p>Password: <%= user.password_hash %></p>
+	<p>============================</p>
+<% end %>
