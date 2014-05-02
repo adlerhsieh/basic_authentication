@@ -4,9 +4,11 @@
 <% if @user.errors.any? %>
     <div class="error_messages">
       <ul>
+        <h3><%= pluralize(@user.errors.count, "errors") %></h3>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>
         <% end %>
+
       </ul>
     </div>
   <% end %>
@@ -18,6 +20,10 @@
 <p>
 	<%= f.label :password %>
 	<%= f.password_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 </p>
 	<p class="button"><%= f.submit %></p>
 <% end %>

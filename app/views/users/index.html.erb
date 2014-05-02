@@ -1,9 +1,15 @@
 <h1>Index Page</h1>
-<%= link_to "Sign up", sign_up_path %>
+<% if current_user %> <%= current_user.name %> <% end %>
+<%= link_to "Sign up", sign_up_path %> | <%= link_to "Sign in", log_in_path %>
+<% if current_user %> | <%= link_to "Sign out", log_out_path %> <% end %>
 
+<% if flash.any? %>
+	<% flash.each do |key, value| %>
+		<%= value %>
+	<% end %>
+<% end %>
 <p>============================</p>
 <% @users.each do |user| %>
-	<p>Name: <%= user.name %></p>
-	<p>Password: <%= user.password_hash %></p>
+	<p>Name: <%= user.name %> | <%= user.id %> | <%= link_to "Delete", user, method: :delete, :confirm => "Sure?" %>
 	<p>============================</p>
 <% end %>
