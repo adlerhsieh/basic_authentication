@@ -1,4 +1,5 @@
 == README
 
 Master版本為練習用的第一版，完全模仿Rails Cast的內容
+
 第二版修正Rails Cast中沒有出現的bug，例如刪除正登入的使用者時，會出現session搜尋id卻找不到的情況
