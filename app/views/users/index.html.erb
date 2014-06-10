@@ -1,0 +1,19 @@
+<h3>All Users</h3>
+<hr/>
+<% @user.each do |user| %>
+	<%= user.name %> | <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Sure?"} %>
+	<hr/>
+<% end %>
+<% if flash.any? %>
+	<% flash.each do |key, value| %>
+		<p><%= value %></p>
+	<% end%>
+<% end %>
+<% if current_user %>
+	<p>Signed in as <%= current_user.name %></p>
+	<p><%= link_to "Sign out", sign_out_path %></p>
+	<p><%= link_to "Sign up", sign_up_path %></p>
+<% else %>
+	<p><%= link_to "Sign in", sign_in_path %></p>
+	<p><%= link_to "Sign up", sign_up_path %></p>
+<% end %>

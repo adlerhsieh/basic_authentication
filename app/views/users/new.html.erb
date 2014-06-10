@@ -1,0 +1,15 @@
+<h3>Sign up</h3>
+<hr/>
+<%= form_for @user do |user| %>
+	<p>Name: <%= user.text_field :name %></p>
+	<p>Password: <%= user.password_field :password %></p>
+	<p>Password again: <%= user.password_field :password_confirmation %></p>
+	<p><%= user.submit "Create" %></p>
+<hr/>
+	<% if @user.errors.any? %>
+		<% @user.errors.full_messages.each do |message| %>
+			<p><%= message %></p>
+		<% end %>
+	<% end %>
+<% end %>
+<%= link_to "Cancel", users_path %>
