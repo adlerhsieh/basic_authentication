@@ -18,3 +18,4 @@
 /db/database.yml
 /db/secrets.yml
 NERD*
+Gemfile.lock
