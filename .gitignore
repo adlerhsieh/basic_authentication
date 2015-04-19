@@ -16,4 +16,5 @@
 /tmp
 
 /db/database.yml
+/db/secrets.yml
 NERD*
